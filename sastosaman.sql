@@ -69,21 +69,65 @@ USE sastosaman;
 -- (3, 7000.00, 'Card', '2025-11-02'),
 -- (4, 1500.00, 'Cash', '2025-11-06');
 
-INSERT INTO country (city_id, city, country) VALUES
-(1, 'Kathmandu', 'Nepal'),
-(2, 'Pokhara', 'Nepal'),
-(3, 'Delhi', 'India'),
-(4, 'Mumbai', 'India');
+-- INSERT INTO country (city_id, city, country) VALUES
+-- (1, 'Kathmandu', 'Nepal'),
+-- (2, 'Pokhara', 'Nepal'),
+-- (3, 'Delhi', 'India'),
+-- (4, 'Mumbai', 'India');
 
-SELECT * FROM COUNTRY;
-SELECT * FROM payment;
-SELECT * FROM address;
-SELECT * FROM customer;
+-- SELECT * FROM COUNTRY;
+-- SELECT * FROM payment;
+-- SELECT * FROM address;
+-- SELECT * FROM customer;
 
-SELECT * FROM customer AS c 
-INNER JOIN payment AS p
-ON c.customer_id = p.customer_id;
+-- -- SELECT * FROM customer AS c 
+-- -- INNER JOIN payment AS p
+-- -- ON c.customer_id = p.customer_id;
+
+-- how much amount was paid by customer 'sushmita' what was mode and payment date? 
+
+-- SELECT 
+-- c.first_name,
+-- p.amount,
+-- p.mode,
+-- p.payment_date FROM customer AS c
+-- INNER JOIN payment AS p
+-- ON c.customer_id = p.customer_id
+-- WHERE c.first_name = 'sushmita';
+
+-- write a query to display each customer total payment amount  
+
+-- SELECT c.first_name,c.last_name,
+-- SUM(p.amount) AS total_amount
+-- FROM customer AS c
+-- INNER JOIN payment AS p
+-- ON c.customer_id = p.customer_id
+-- GROUP BY c.customer_id,c.first_name, c.last_name;
 
 
+
+-- display each customer's first_name, last name city, and country 
+
+-- SELECT 
+--     c.first_name,
+--     c.last_name,
+--     co.city,
+--     co.country
+-- FROM customer AS c
+-- JOIN address AS a 
+--     ON c.address_id = a.address_id
+-- JOIN country AS co 
+--     ON a.city_id = co.city_id;
+
+ 
+
+-- List all customers who live in Nepal along with their address and phone number.
+SELECT c.first_name,c.last_name,a.address,a.phone
+FROM customer AS c
+ JOIN address AS a
+ON c.address_id = a.address_id
+WHERE a.address = 'kathmandu';
+
+-- select* from address;
 
 
