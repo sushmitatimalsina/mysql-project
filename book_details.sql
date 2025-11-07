@@ -31,3 +31,6 @@ INSERT INTO book_details (book_id, book_name, author_name, category, total_copie
 (118, 'Computer Networks', 'T. Khadka', 'Technology', 5, 5, 2023),
 (119, 'Database Systems', 'A. Oli', 'Technology', 8, 7, 2022),
 (120, 'Programming in C', 'P. Chaudhary', 'Technology', 10, 9, 2024);
+
+SELECT * FROM book_details 
+WHERE category = 'science';
