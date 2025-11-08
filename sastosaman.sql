@@ -126,7 +126,7 @@ SELECT c.first_name,c.last_name,a.address,a.phone
 FROM customer AS c
  JOIN address AS a
 ON c.address_id = a.address_id
-WHERE a.address = 'kathmandu';
+WHERE a.address = 'Kathmandu';
 
 -- select* from address;
 
