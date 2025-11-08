@@ -122,12 +122,36 @@ USE sastosaman;
  
 
 -- List all customers who live in Nepal along with their address and phone number.
-SELECT c.first_name,c.last_name,a.address,a.phone
-FROM customer AS c
- JOIN address AS a
-ON c.address_id = a.address_id
-WHERE a.address = 'Kathmandu';
+-- SELECT c.first_name,c.last_name,a.address,a.phone
+-- FROM customer AS c
+--  JOIN address AS a
+-- ON c.address_id = a.address_id
+-- WHERE a.address = 'Kathmandu';
 
 -- select* from address;
+
+-- Find the customer who made the highest payment and show their name, amount, and payment mode.
+
+-- SELECT c.first_name,c.last_name,p.amount,p.mode
+-- FROM customer AS c
+-- INNER JOIN payment AS p 
+-- ON c.customer_id = p.customer_id
+-- WHERE p.amount = (
+-- SELECT MAX(amount) FROM payment
+-- );
+
+-- left join : return all record from the lect table, and the matched record from the table
+-- Display all customers and their payment details. Include customers who have not made any payments.
+SELECT 
+    c.customer_id,
+    c.first_name,
+    c.last_name,
+    p.payment_id,
+    p.amount,
+    p.mode,
+    p.payment_date
+FROM customer AS c
+LEFT JOIN payment AS p 
+    ON c.customer_id = p.customer_id;
 
 
