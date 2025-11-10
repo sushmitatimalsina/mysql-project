@@ -142,16 +142,33 @@ USE sastosaman;
 
 -- left join : return all record from the lect table, and the matched record from the table
 -- Display all customers and their payment details. Include customers who have not made any payments.
-SELECT 
-    c.customer_id,
-    c.first_name,
-    c.last_name,
-    p.payment_id,
-    p.amount,
-    p.mode,
-    p.payment_date
-FROM customer AS c
-LEFT JOIN payment AS p 
-    ON c.customer_id = p.customer_id;
+-- SELECT 
+--     c.customer_id,
+--     c.first_name,
+--     c.last_name,
+--     p.payment_id,
+--     p.amount,
+--     p.mode,
+--     p.payment_date
+-- FROM customer AS c
+-- LEFT JOIN payment AS p 
+--     ON c.customer_id = p.customer_id;
+--     
+--     -- List all customers along with their address details, even if the address is missing.
+--     
+--     SELECT c.customer_id,
+--     c.first_name,
+--     c.last_name,
+--     c.address_id,
+--     a.address_id,
+--     a.address,a.city_id,
+--     a.postal_code,
+--     a.phone
+--     FROM customer AS c
+--     LEFT JOIN address AS a
+--     On c.address_id = a.address_id;
+SELECT * FROM address;
+    
+    
 
 
