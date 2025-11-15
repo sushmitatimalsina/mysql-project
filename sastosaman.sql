@@ -179,14 +179,20 @@ USE sastosaman;
 -- FROM payment
 -- GROUP BY mode;
 
-SELECT
-c.customer_id,
-c.first_name,
-c.last_name,
-SUM(p.amount) AS Total_amount
-FROM customer AS c
-JOIN payment AS P
-ON c.customer_id = p.customer_id
-GROUP BY c.customer_id,c.first_name,c.last_name;
+-- SELECT
+-- c.customer_id,
+-- c.first_name,
+-- c.last_name,
+-- SUM(p.amount) AS Total_amount
+-- FROM customer AS c
+-- JOIN payment AS P
+-- ON c.customer_id = p.customer_id
+-- GROUP BY c.customer_id,c.first_name,c.last_name;
+
+-- --Count how many payments each customer has made 
+SELECT customer_id, COUNT(payment_id) AS number_of_payment
+FROM payment
+GROUP BY customer_id;
+
  
 
