@@ -190,9 +190,18 @@ USE sastosaman;
 -- GROUP BY c.customer_id,c.first_name,c.last_name;
 
 -- --Count how many payments each customer has made 
-SELECT customer_id, COUNT(payment_id) AS number_of_payment
-FROM payment
-GROUP BY customer_id;
+-- SELECT customer_id, COUNT(payment_id) AS number_of_payment
+-- FROM payment
+-- GROUP BY customer_id;
+
+-- Find total customers in each country
+SELECT co.country, COUNT(c.customer_id) AS total_customer
+FROM customer AS c
+JOIN address AS a
+ON c.address_id = a.address_id
+JOIN country AS co
+ON co.city_id = a.city_id
+GROUP BY co.country;
 
  
 
