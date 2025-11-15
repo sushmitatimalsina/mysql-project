@@ -208,5 +208,10 @@ SELECT customer_id, MAX(amount) AS highest_payment
 FROM payment
 GROUP BY customer_id;
 
+-- Total payment amount received per date
+SELECT payment_date, SUM(amount) AS total_payment
+FROM payment
+GROUP BY payment_date;
+
  
 
