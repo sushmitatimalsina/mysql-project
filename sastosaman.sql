@@ -195,13 +195,18 @@ USE sastosaman;
 -- GROUP BY customer_id;
 
 -- Find total customers in each country
-SELECT co.country, COUNT(c.customer_id) AS total_customer
-FROM customer AS c
-JOIN address AS a
-ON c.address_id = a.address_id
-JOIN country AS co
-ON co.city_id = a.city_id
-GROUP BY co.country;
+-- SELECT co.country, COUNT(c.customer_id) AS total_customer
+-- FROM customer AS c
+-- JOIN address AS a
+-- ON c.address_id = a.address_id
+-- JOIN country AS co
+-- ON co.city_id = a.city_id
+-- GROUP BY co.country;
+
+-- Find highest payment per customer (using GROUP BY + MAX)
+SELECT customer_id, MAX(amount) AS highest_payment
+FROM payment
+GROUP BY customer_id;
 
  
 
