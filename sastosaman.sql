@@ -167,8 +167,26 @@ USE sastosaman;
 --     FROM customer AS c
 --     LEFT JOIN address AS a
 --     On c.address_id = a.address_id;
-SELECT * FROM address;
+-- SELECT * FROM address;
     
     
+-- Group By
+-- SELECT city_id, COUNT(*) AS total_customers
+-- FROM address
+-- GROUP BY city_id;
 
+-- SELECT mode, SUM(amount) AS total_amount
+-- FROM payment
+-- GROUP BY mode;
+
+SELECT
+c.customer_id,
+c.first_name,
+c.last_name,
+SUM(p.amount) AS Total_amount
+FROM customer AS c
+JOIN payment AS P
+ON c.customer_id = p.customer_id
+GROUP BY c.customer_id,c.first_name,c.last_name;
+ 
 
