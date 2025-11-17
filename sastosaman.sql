@@ -204,17 +204,20 @@ USE sastosaman;
 -- GROUP BY co.country;
 
 -- Find highest payment per customer (using GROUP BY + MAX)
-SELECT customer_id, MAX(amount) AS highest_payment
-FROM payment
-GROUP BY customer_id;
+-- SELECT customer_id, MAX(amount) AS highest_payment
+-- FROM payment
+-- GROUP BY customer_id;
 
 -- Total payment amount received per date
-SELECT payment_date, SUM(amount) AS total_payment
-FROM payment
-GROUP BY payment_date;
+-- SELECT payment_date, SUM(amount) AS total_payment
+-- FROM payment
+-- GROUP BY payment_date;
 
 -- ORDER BY 
-SELECT * FROM customer ORDER BY first_name ASC; 
+-- SELECT * FROM customer ORDER BY first_name ASC; 
 
+-- SELECT * FROM customer ORDER BY last_name DESC;
+
+SELECT * FROM customer ORDER BY address_id DESC;
  
 
