@@ -221,10 +221,14 @@ USE sastosaman;
 -- SELECT * FROM customer ORDER BY address_id DESC;
 -- SELECT * FROM customer WHERE first_name LIKE 's%';
 
-SELECT * 
-FROM customer
-WHERE first_name LIKE '_____';
+-- SELECT * 
+-- FROM customer
+-- WHERE first_name LIKE '_____';
 
+
+SELECT *
+FROM customer
+WHERE first_name NOT LIKE '%a%';
 
 
  
