@@ -218,6 +218,8 @@ USE sastosaman;
 
 -- SELECT * FROM customer ORDER BY last_name DESC;
 
-SELECT * FROM customer ORDER BY address_id DESC;
+-- SELECT * FROM customer ORDER BY address_id DESC;
+SELECT * FROM customer WHERE first_name LIKE 's%';
+
  
 
