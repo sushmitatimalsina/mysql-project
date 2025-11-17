@@ -213,5 +213,8 @@ SELECT payment_date, SUM(amount) AS total_payment
 FROM payment
 GROUP BY payment_date;
 
+-- ORDER BY 
+SELECT * FROM customer ORDER BY first_name ASC; 
+
  
 
