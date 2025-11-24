@@ -226,9 +226,38 @@ USE sastosaman;
 -- WHERE first_name LIKE '_____';
 
 
-SELECT *
-FROM customer
-WHERE first_name NOT LIKE '%a%';
+-- SELECT *
+-- FROM customer
+-- WHERE first_name NOT LIKE '%a%';
+
+-- SELECT * FROM payment 
+-- WHERE amount >(SELECT AVG(amount) FROM payment);
+
+-- Find the customer with the highest payment
+-- SELECT first_name, last_name,customer_id
+-- FROM customer
+-- WHERE customer_id = (
+-- SELECT customer_id
+-- FROM payment
+-- ORDER BY amount DESC
+-- LIMIT 1
+-- );
+
+CREATE INDEX idx_payment_customer
+ON payment(customer_id);
+
+SHOW INDEX FROM payment;
+
+EXPLAIN
+SELECT * 
+FROM payment
+WHERE customer_id = 1;
+
+SELECT c.first_name, p.amount, p.mode, p.payment_date
+FROM customer AS c
+INNER JOIN payment AS p
+ON c.customer_id = p.customer_id
+WHERE c.customer_id = 1;
 
 
  
