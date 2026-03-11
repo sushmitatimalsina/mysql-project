@@ -16,4 +16,18 @@ AND
 AND 
 	(join_date > '2022-01-01')
 ;
+
+-- or
+SELECT 
+		*
+FROM
+			dim_customer
+WHERE 
+	(gender = 'F')
+AND 
+		((country = "france")
+OR
+	(join_date > '2022-01-01'))
+;
+
     
