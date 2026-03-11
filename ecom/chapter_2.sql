@@ -10,8 +10,10 @@ SELECT
 FROM
 			dim_customer
 WHERE 
-	gender = 'F'
+	(gender = 'F')
 AND 
-		country = "france"
+		(country = "france")
+AND 
+	(join_date > '2022-01-01')
 ;
     
