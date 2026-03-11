@@ -38,4 +38,12 @@ FROM
 	dim_customer
 WHERE
 		first_name LIKE 'T%';
+
+
+SELECT 
+*
+FROM
+dim_customer
+WHERE 
+first_name like 'T%Y';        
     
