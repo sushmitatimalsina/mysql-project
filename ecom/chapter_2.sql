@@ -10,5 +10,8 @@ SELECT
 FROM
 			dim_customer
 WHERE 
-	gender = 'F';
+	gender = 'F'
+AND 
+		country = "france"
+;
     
