@@ -30,4 +30,12 @@ OR
 	(join_date > '2022-01-01'))
 ;
 
+-- like 
+
+SELECT 
+	*
+FROM
+	dim_customer
+WHERE
+		first_name LIKE 'T%';
     
