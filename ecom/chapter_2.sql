@@ -45,5 +45,5 @@ SELECT
 FROM
 dim_customer
 WHERE 
-first_name like 'T%Y';        
+first_name like 'T__f%Y';        
     
