@@ -45,5 +45,13 @@ SELECT
 FROM
 dim_customer
 WHERE 
-first_name like 'T__f%Y';        
+first_name like 'T__f%Y';    
+
+-- sorting 
+SELECT 
+	* 
+FROM 
+	dim_product
+ORDER BY
+	unit_price ;    
     
