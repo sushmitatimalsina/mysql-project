@@ -55,4 +55,11 @@ FROM
 ORDER BY
 	unit_price DESC
 LIMIT 3;    
+SELECT 
+* 
+FROM 
+dim_product
+WHERE launch_date > '2023-01-01'
+ORDER BY
+launch_date;
     
