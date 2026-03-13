@@ -55,11 +55,30 @@ FROM
 ORDER BY
 	unit_price DESC
 LIMIT 3;    
+
+
 SELECT 
-* 
-FROM 
-dim_product
-WHERE launch_date > '2023-01-01'
-ORDER BY
-launch_date;
+category,
+COUNT(*)
+as Total_product
+FROM dim_product 
+GROUP BY category;
+
+SELECT brand, AVG(unit_price) AS AVG_price
+FROM dim_product
+GROUP BY brand;
+
+SELECT * FROM dim_product
+ORDER BY launch_date DESC
+limit 1;
+
+SELECT * FROM dim_product
+WHERE unit_price > 900;
+
+SELECT product_id, COUNT(*)
+FROM dim_product
+GROUP BY product_id
+HAVING COUNT(*) >1;
+
+
     
