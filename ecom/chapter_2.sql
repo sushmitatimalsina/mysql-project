@@ -53,5 +53,6 @@ SELECT
 FROM 
 	dim_product
 ORDER BY
-	unit_price ;    
+	unit_price DESC
+LIMIT 3;    
     
