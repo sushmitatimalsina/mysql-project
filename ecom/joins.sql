@@ -38,3 +38,11 @@ LEFT JOIN
 customers as c 
 ON 
 o.customer_id = c.id;
+
+-- right join
+SELECT * 
+FROM orders as o
+RIGHT JOIN 
+customers as c 
+ON 
+o.customer_id = c.id;
