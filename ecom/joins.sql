@@ -48,9 +48,25 @@ ON
 o.customer_id = c.id;
 
 -- full joins(not supported)
+-- SELECT * 
+-- FROM orders as o
+-- FULL JOIN 
+-- customers as c 
+-- ON 
+-- o.customer_id = c.id;
+
+
+-- UNION
 SELECT * 
 FROM orders as o
-FULL JOIN 
+LEFT JOIN 
+customers as c 
+ON 
+o.customer_id = c.id
+UNION
+SELECT * 
+FROM orders as o
+RIGHT JOIN 
 customers as c 
 ON 
 o.customer_id = c.id;
