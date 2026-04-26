@@ -14,3 +14,11 @@ INSERT INTO customers (id, name, email) VALUES
 (3, 'Hari Thapa', 'hari@gmail.com'),
 (4, 'Gita Karki', 'gita@gmail.com'),
 (5, 'Bikash Lama', 'bikash@gmail.com');
+
+-- inner joins
+SELECT * 
+FROM orders as o
+INNER JOIN 
+customer as c 
+ON 
+o.customer_id = c.id;
