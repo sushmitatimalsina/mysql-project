@@ -6,5 +6,14 @@ ALTER TABLE dim_product
 ADD vat_amount int;
 
 UPDATE dim_product
-SET vat_amount = unit_price * 0.13
-WHERE product_id > 0;
+SET vat_amount = unit_price * 0.13;
+
+SET SQL_SAFE_UPDATES = 0;
+
+SELECT 
+unit_price *0.90 AS discounted_price,
+unit_price /10 AS fractioned_price,
+round(unit_price,1) AS rouned_price
+FROM
+dim_product;
+
