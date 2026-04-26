@@ -7,6 +7,14 @@ VALUES (101, 1000, 500),
 (104, 1003, 900),
 (105, 1004, 650);
 
+INSERT INTO orders (id, customer_id, price)
+VALUES 
+(101, 1, 500),
+(102, 2, 750),
+(103, 3, 300),
+(104, 4, 900),
+(105, 5, 650);
+
 CREATE TABLE customers( id int , name varchar(50), email varchar(50) );
 INSERT INTO customers (id, name, email) VALUES
 (1, 'Ram Sharma', 'ram@gmail.com'),
@@ -19,6 +27,14 @@ INSERT INTO customers (id, name, email) VALUES
 SELECT * 
 FROM orders as o
 INNER JOIN 
-customer as c 
+customers as c 
+ON 
+o.customer_id = c.id;
+
+-- left joins
+SELECT * 
+FROM orders as o
+LEFT JOIN 
+customers as c 
 ON 
 o.customer_id = c.id;
