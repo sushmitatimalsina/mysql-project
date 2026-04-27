@@ -26,4 +26,11 @@ utc_time()
 FROM 
 dim_date;
 
+SELECT 
+date,
+year(date),
+month(date),
+day(date)
+FROM 
+dim_date;
 
