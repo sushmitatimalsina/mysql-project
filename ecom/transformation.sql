@@ -17,3 +17,8 @@ round(unit_price,1) AS rouned_price
 FROM
 dim_product;
 
+
+-- date transformation
+SELECT * FROM dim_date;
+
+
