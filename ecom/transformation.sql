@@ -20,5 +20,9 @@ dim_product;
 
 -- date transformation
 SELECT * FROM dim_date;
+SELECT date,
+now() as 'current_timestamp'
+FROM 
+dim_date;
 
 
