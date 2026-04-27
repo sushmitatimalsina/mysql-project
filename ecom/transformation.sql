@@ -30,7 +30,9 @@ SELECT
 date,
 year(date),
 month(date),
-day(date)
+day(date),
+weekday(date),
+dayname(date)
 FROM 
 dim_date;
 
